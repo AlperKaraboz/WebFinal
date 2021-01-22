@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" namespace="Zuperdukkan.Models" assembly="Zuperdukkan, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="dukkan" table="Dukkan">
+    <id name="Id_Zup" type="Int32">
+      <generator class="native" />
+    </id>
+    <property name="Ad" length="20" />
+    <property name="Telefon" length="20" />
+    <set name="Urunler" inverse="true" cascade="all">
+      <key column="Dukkan" />
+      <one-to-many class="urun" />
+    </set>
+  </class>
+</hibernate-mapping>

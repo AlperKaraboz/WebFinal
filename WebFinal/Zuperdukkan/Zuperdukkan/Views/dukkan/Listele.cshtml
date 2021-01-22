@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Zuperdukkan.Models.dukkan>
+
+@{
+    ViewBag.Title = "Listele";
+}
+
+<h2>Listele</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_Zup)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Id_Zup)
+    </td>
+
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Ad)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Telefon)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id_Zup}) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id_Zup }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id_Zup })
+    </td>
+</tr>
+}
+
+</table>
